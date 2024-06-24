@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Travel Explorer</title>
+  <style>
+    /* General styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    /* Header styles */
+    header {
+      background-color: #333;
+      /* border-radius: 70px; */
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    .nav-list {
+        width: 99%;
+        display: flex;
+        align-items: center;
+        /* background-color: rgb(183, 186, 192); */
+    }
+    .nav-list li {
+        list-style: none;
+        padding: 23px 30px;
+    }
+    .nav-list li a {
+        font-size: 20px;
+        text-decoration: none;
+        color: rgb(42, 40, 40);
+    }
+     ul li ul li{
+        display: none;
+    }
+    .nav-list li a:hover {
+        color: rgb(46, 45, 45);
+    }
+    h1 {
+      margin: 0;
+    }
+    
+    /* Destination section styles */
+    .destination-section {
+      background-color: #f9f9f9;
+      padding: 50px 0;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 30px;
+    }
+    
+    .destination-card {
+      display: inline-block;
+      margin: 20px;
+      width: 300px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .destination-card img {
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    
+    .destination-card h3 {
+      margin: 0;
+    }
+    
+    /* Deals section styles */
+    .deals-section {
+      padding: 50px 0;
+      text-align: center;
+    }
+    
+    .deal-card {
+      display: inline-block;
+      margin: 20px;
+      width: 300px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .deal-card h3 {
+      margin: 0;
+    }
+    
+    .deal-card p {
+      margin: 10px 0;
+    }
+    
+    /* Featured packages section styles */
+    .featured-packages-section {
+      background-color: #f9f9f9;
+      padding: 50px 0;
+      text-align: center;
+    }
+    
+    .package-card {
+      display: inline-block;
+      margin: 20px;
+      width: 300px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .package-card img {
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    
+    .package-card h3 {
+      margin: 0;
+    }
+    .container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+.container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .section-content {
+      margin-left: 20px;
+    }
+
+    .section-content ul {
+      margin-top: 0;
+    }
+
+    .section-content li {
+      margin-bottom: 5px;
+    }
+
+    .pricing {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .price {
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    .accommodation {
+      margin-top: 20px;
+    }
+
+    .accommodation-item {
+      display: flex;
+      margin-bottom: 10px;
+    }
+
+    .accommodation-image {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+
+    .accommodation-details {
+      flex-grow: 1;
+    }
+.dashboard {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.cancel-button,
+.modify-button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.cancel-button {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.modify-button {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.cancel-button:hover,
+.modify-button:hover {
+  opacity: 0.8;
+}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Travel Explorer</h1>
+  </header>
+  <nav class="navbar background">
+    <ul class="nav-list">
+        <li><a href="#">destination-section</a></li>
+        <li><a href="#">Travel package details </a></li>
+        <li><a href="#">Booking Ticket</a></li>
+        <li><a href="#">User Account</a>
+        <li><a href="#">Booking Management Dashboard</a>
+        </li>
+        </ul>
+</nav>
+  <!-- Destinations Section -->
+  <section id="destination-section" class="destination-section">
+    <h2>Popular Destinations</h2>
+    <div class="destination-card">
+      <img src="destination1.jpg" alt="Destination 1">
+      <h3> TAJ MAHAL</h3>
+      <p>The Taj Mahal is a beautiful and most attractive historical place in India.It is a cultural monument of India which was built by the King Shah Jahan in the memory of his wife(Mumtaz Mahal).</p>
+    </div>
+    <div class="destination-card">
+      <img src="destination2.jpg" alt="Destination 2">
+      <h3>MOUNT FUJI</h3>
+      <p>Mt.Fuji is the tallest peak in Japan ,a popular recreational destination for Hiking ,camping and relaxation. It is known for its graceful conical form.</p>
+    </div>
+    <div class="destination-card">
+      <img src="destination3.jpg" alt="Destination 3">
+      <h3>Eiffel Tower</h3>
+      <p>The Eiffel Tower is world tallest tower and distinctive symbol of the city of Paris.</p>
+    </div>
+  <!-- </section> -->
+  
+  <!-- Deals Section -->
+  <section class="deals-section">
+    <h2>Deals</h2>
+    <div class="deal-card">
+      <h3>Deal 1</h3>
+      <p>Special offer for Taj Mahal</p>
+      <p>Discount: Rs.8,276/-</p>
+    </div>
+    <div class="deal-card">
+      <h3>Deal 2</h3>
+      <p>Special offer for Mount Fuji</p>
+      <p>Discount: Rs.12,421/-</p>
+    </div>
+    <div class="deal-card">
+      <h3>Deal 3</h3>
+      <p>Special offer for Eiffel Tower</p>
+      <p>Discount: Rs.16,562/-</p>
+    </div>
+  </section>
+  
+  <!-- Featured Packages Section -->
+  <section class="featured-packages-section">
+    <h2>Featured Packages</h2>
+    <div class="package-card">
+      <img src="package1.jpg" alt="Package 1">
+      <h3>Package 1</h3>
+      <p>Description of package 1</p>
+      <p>Price: Rs.15000/-</p>
+    </div>
+    <div class="package-card">
+      <img src="package2.jpg" alt="Package 2">
+      <h3>Package 2</h3>
+      <p>Description of package 2</p>
+      <p>Price: Rs.39,999/-</p>
+    </div>
+    <div class="package-card">
+      <img src="package3.jpg" alt="Package 3">
+      <h3>Package 3</h3>
+      <p>Description of package 3</p>
+      <p>Price:Rs.50000/-</p>
+    </div>
+  </section>
+</section>
+<br>
+
+<section id="Travel package details" class="Travel package details">
+      <div class="container">
+    <h1>Travel Package Details</h1>
+
+    <div class="section">
+      <h2 class="section-title">Itinerary: Paris</h2>
+      <div class="section-content">
+        <ul>
+          <li><b>Day 1:</b> Vist some of paris' biggest and most iconic sites: the Eiffel Tower. From the Eiffel Tower , its another very pretty walk to Rue Cler. </li>
+          <li><b>Day 2:</b> Vist The Louver, the world's largest art Museum.From there then walk through Angelina , they serves decadent hot chocolate and delicious French pastries.</li>
+          <li><b>Day 3:</b> The Champs-Elysees is one of the most recognized street in the world and it is famous as being the finish of tour de franch.</li>
+          
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Accommodation Options</h2>
+      <div class="section-content">
+        <div class="accommodation">
+          <div class="accommodation-item">
+            <img src="accommodation1.jpg" alt="Accommodation 1" class="accommodation-image">
+            <div class="accommodation-details">
+              <h3>Accommodation 1:Chouchou Hotel</h3>
+              <p>Well set in the centre of Paris, Chouchou Hotel provides air-conditioned rooms, a restaurant, free WiFi and a bar. This 4-star hotel offers a concierge service and luggage storage space. The property is non-smoking and is located 600 metres from Opéra Garnier.
+                Popular points of interest near the accommodation include Gare Saint-Lazare, Louvre Museum and Pigalle Metro Station. The nearest airport is Paris - Orly Airport, 18 km from Chouchou Hotel</p>
+            </div>
+          </div>
+          <div class="accommodation-item">
+            <img src="accommodation2.jpg" alt="Accommodation 2" class="accommodation-image">
+            <div class="accommodation-details">
+              <h3>Accommodation 2:Hôtel Le Milie Rose</h3>
+              <p>Situated in Paris and with Gare du Nord Metro Station reachable within 1 km, Hôtel Le Milie Rose features concierge services, allergy-free rooms, a terrace, free WiFi throughout the property and a bar. This 4-star hotel offers room service and a 24-hour front desk. The property is non-smoking and is located less than 1 km from Gare du Nord.
+                Guests at the accommodation can enjoy a buffet or a continental breakfast.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Transportation</h2>
+      <div class="section-content">
+        <p>Paris has an extremely extensive piblic transport system , which usually works well.The main means of transport in paris are <b>Paris Metro,RER,City Buses,Montmartre Funicular ,Tramway,Taxis</b> </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Activities</h2>
+      <div class="section-content">
+        <ul>
+          <li><b>Activity 1</b>: See the Eiffel Tower at night.</li>
+          <li><b>Activity 2</b>: Go shopping at boutiques and fashion stores.</li>
+          <li><b>Activity 3</b>: Go on a treasure hunt at the Louvre.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pricing">
+      <h2 class="section-title">Pricing</h2>
+      <div class="price">Rs.2,34,846/- </div>
+      <p>Prices are subject to change without prior notice.</p>
+    </div>
+  </div>
+  </section>
+<br>
+<!-- booking destination -->
+  <div class="container">
+    <
+    <h1>Booking Ticket Form</h1>
+    <form>
+      <br>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+      <div class="form-group">
+        <label for="destination">Destination:</label>
+        <select id="destination" name="destination" required>
+          <option value="">Select a destination</option>
+          <option value="New York">India</option>
+          <option value="London">Japan</option>
+          <option value="Paris">Paris</option>
+          <option value="Tokyo">Tokyo</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+      <div class="form-group">
+        <label for="passengers">Passengers:</label>
+        <input type="number" id="passengers" name="passengers" min="1" required>
+      </div>
+    <h3>Payment Details</h3>
+    <form method="post" action="process_payment.php">
+      <label for="card_number">Card Number:</label>
+      <input type="text" id="card_number" name="card_number" placeholder="Card Number" required>
+
+      <label for="expiry_date">Expiry Date:</label>
+      <input type="text" id="expiry_date" name="expiry_date" placeholder="MM/YY" required>
+
+      <label for="cvv">CVV:</label>
+      <input type="text" id="cvv" name="cvv" placeholder="CVV" required>
+
+      <button type="submit">Pay Now</button>
+      <br>
+      <div class="form-group">
+        <input type="submit" value="Book Now">
+      </div>
+    </form>
+  </div>
+  <br>
+  <div class="container">
+    <h2>USER ACCOUNT</h2>
+  <h3>Registration</h3>
+      <form>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" placeholder="Username" required>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" placeholder="Password" required>
+    <button type="submit">Register</button>
+  </form>
+  <h3> Login</h3>
+        <form>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" placeholder="Username" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    <h2>Review and Rating</h2>
+    <!-- <form method="post" action="submit_review.php"> -->
+      <form>
+      <label for="rating">Rating:</label>
+      <select id="rating" name="rating" required>
+        <option value="">Select Rating</option>
+        <option value="5">5 Stars</option>
+        <option value="4">4 Stars</option>
+        <option value="3">3 Stars</option>
+        <option value="2">2 Stars</option>
+        <option value="1">1 Star</option>
+      </select>
+      <h3>Leave a Review</h3>
+      <label for="review">Review:</label>
+      <textarea id="review" name="review" placeholder="Write your review" required></textarea> 
+      <!-- <button type="submit">Submit Review</button> -->
+      <div class="form-group">
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+  </div>
+  <div class="dashboard">
+    <h1>Booking Management Dashboard</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Booking ID</th>
+          <th>Booking Date</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>2023-05-20</td>
+          <td>Confirmed</td>
+          <td>
+            <button class="cancel-button">Cancel</button>
+            <button class="modify-button">Modify</button>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>2023-05-21</td>
+          <td>Confirmed</td>
+          <td>
+            <button class="cancel-button">Cancel</button>
+            <button class="modify-button">Modify</button>
+          </td>
+        </tr>
+        <!-- Add more booking rows here -->
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>
